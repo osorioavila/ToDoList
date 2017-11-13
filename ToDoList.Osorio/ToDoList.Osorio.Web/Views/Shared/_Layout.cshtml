@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList - Osório Avila</title>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/js")
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>ToDoList</h1>
+        </div>      
+    </div>
+    <div class="container body-content">@RenderBody()</div>
+</body>
+</html>

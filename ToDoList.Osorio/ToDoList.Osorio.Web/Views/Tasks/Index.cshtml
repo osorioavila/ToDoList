@@ -1,0 +1,142 @@
+﻿@model ToDoList.Web.Models.TaskModel
+
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h4 class="panel-title pull-left" style="padding-top: 7.5px;">A fazer</h4>
+            <div class="btn-group pull-right">
+                <button class="btn anchorCreate" data-toggle="tooltip" data-id="1" title="Adicionar"><i class="glyphicon glyphicon-plus"></i></button>
+            </div>
+        </div>
+        <div class="panel-body" style="min-height:100px">
+            <ul id="sortable1" class="connectedSortable list-group" style="min-height:80px">
+                @foreach (var item in ViewBag.Tasks)
+                {
+                    if (item.Status.Id == 1) //A fazer
+                    {
+                        <li class="list-group-item" id="@item.Id">
+                            <span class="glyphicon glyphicon"></span>@item.Title
+                            <div class="btn-group pull-right">
+                                <a href="javascript:void(0);" class="btn-default details anchorDetail" data-id="@item.Id" data-toggle="tooltip" title="Detalhes">
+                                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                </a>
+                                <a href="javascript:void(0);" class="btn-default details anchorEdit" data-id="@item.Id" data-toggle="tooltip" title="Editar">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </a>
+                                <a href="javascript:void(0);" class="btn-default details anchorDelete" data-id="@item.Id" data-toggle="tooltip" title="Apagar">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading clearfix">
+            <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Em Andamento</h4>
+            <div class="btn-group pull-right">
+                <button class="btn btn-primary anchorCreate" data-toggle="tooltip" data-id="2" title="Adicionar"><i class="glyphicon glyphicon-plus"></i></button>
+            </div>
+        </div>
+        <div class="panel-body" style="min-height:100px">
+            <ul id="sortable2" class="connectedSortable list-group" style="min-height:80px">
+                @foreach (var item in ViewBag.Tasks)
+                {
+                    if (item.Status.Id == 2) //Em Andamento
+                    {
+                        <li class="list-group-item" id="@item.Id">
+                            <span class="glyphicon glyphicon"></span>@item.Title
+                            <div class="btn-group pull-right">
+                                <a href="javascript:void(0);" class="btn-default details anchorDetail" data-id="@item.Id" data-toggle="tooltip" title="Detalhes">
+                                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                </a>
+                                <a <a href="javascript:void(0);" class="btn-default details anchorEdit" data-id="@item.Id" data-toggle="tooltip" title="Editar">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </a>
+                                <a href="javascript:void(0);" class="btn-default details anchorDelete" data-id="@item.Id" data-toggle="tooltip" title="Apagar">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="panel panel-success">
+        <div class="panel-heading clearfix">
+            <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Concluido</h4>
+            <div class="btn-group pull-right">
+                <button class="btn btn-success anchorCreate" data-toggle="tooltip" data-id="3" title="Adicionar"><i class="glyphicon glyphicon-plus"></i></button>
+            </div>
+        </div>
+        <div class="panel-body" style="min-height:100px">
+            <ul id="sortable3" class="connectedSortable list-group" style="min-height:80px">
+                @foreach (var item in ViewBag.Tasks)
+                {
+                    if (item.Status.Id == 3) //Concluido
+                    {
+                        <li class="list-group-item" id="@item.Id">
+                            <span class="glyphicon glyphicon"></span>@item.Title
+                            <div class="btn-group pull-right">
+                                <a href="javascript:void(0);" class="btn-default details anchorDetail" data-id="@item.Id" data-toggle="tooltip" title="Detalhes">
+                                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                </a>
+                                <a href="javascript:void(0);" class="btn-default details anchorEdit" data-id="@item.Id" data-toggle="tooltip" title="Editar">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </a>
+                                <a href="javascript:void(0);" class="btn-default details anchorDelete" data-id="@item.Id" data-toggle="tooltip" title="Apagar">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id='modalCreate' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='modalCreateContent'></div>
+        </div>
+    </div>
+</div>
+
+<div id='modalEdit' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='modalEditContent'></div>
+        </div>
+    </div>
+</div>
+
+<div id='modalDetails' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='modalDetailsContent'></div>
+        </div>
+    </div>
+</div>
+
+<div id='modalDelete' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='modalDeleteContent'></div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,63 @@
+﻿USE [teste]
+GO
+
+/****** Object:  Table [dbo].[StatusTarefa]    Script Date: 12/11/2017 23:25:34 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[StatusTarefa](
+	[id_statustarefa] [bigint] IDENTITY(1,1) NOT NULL,
+	[datahora_criacao] [datetime] NOT NULL,
+	[usuario_criacao] [varchar](100) NOT NULL,
+	[datahora_alteracao] [datetime] NULL,
+	[usuario_alteracao] [varchar](100) NULL,
+	[descricao] [varchar](max) NOT NULL,
+ CONSTRAINT [PK_StatusTarefa] PRIMARY KEY CLUSTERED 
+(
+	[id_statustarefa] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+
+USE [teste]
+GO
+
+/****** Object:  Table [dbo].[Tarefa]    Script Date: 12/11/2017 23:25:47 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tarefa](
+	[id_tarefa] [bigint] IDENTITY(1,1) NOT NULL,
+	[datahora_criacao] [datetime] NOT NULL,
+	[usuario_criacao] [varchar](100) NOT NULL,
+	[datahora_alteracao] [datetime] NULL,
+	[usuario_alteracao] [varchar](100) NULL,
+	[descricao] [varchar](max) NOT NULL,
+	[id_statustarefa] [bigint] NOT NULL,
+	[titulo] [varchar](15) NOT NULL,
+ CONSTRAINT [PK_Tarefa] PRIMARY KEY CLUSTERED 
+(
+	[id_tarefa] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Tarefa] ADD  CONSTRAINT [DF_Tarefa_datahora_criacao]  DEFAULT (getdate()) FOR [datahora_criacao]
+GO
+
+ALTER TABLE [dbo].[Tarefa]  WITH CHECK ADD  CONSTRAINT [FK_Tarefa_StatusTarefa] FOREIGN KEY([id_statustarefa])
+REFERENCES [dbo].[StatusTarefa] ([id_statustarefa])
+GO
+
+ALTER TABLE [dbo].[Tarefa] CHECK CONSTRAINT [FK_Tarefa_StatusTarefa]
+GO
+
+

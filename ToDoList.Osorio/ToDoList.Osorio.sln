@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.Osorio.API", "ToDoList.Osorio.API\ToDoList.Osorio.API.csproj", "{0EBDA9A1-B8CF-4B4A-BD1B-E531F226AA10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.Osorio.Web", "ToDoList.Osorio.Web\ToDoList.Osorio.Web.csproj", "{C24B7C50-804B-48F7-90D0-8A38105868A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{79B44D7D-62D0-4A49-B3AB-53206D7137D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.Osorio.Database", "Database\ToDoList.Osorio.Database\ToDoList.Osorio.Database.csproj", "{C9056E8E-CEBA-460C-9536-534B4486B11F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.Osorio.Core", "ToDoList.Osorio.Core\ToDoList.Osorio.Core.csproj", "{029468BA-C023-47E9-BB7E-1D180D39DF27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.Osorio.Test", "ToDoList.Osorio.Test\ToDoList.Osorio.Test.csproj", "{7F343B6A-C04E-4CDA-AAAA-A37C69B2AF16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EBDA9A1-B8CF-4B4A-BD1B-E531F226AA10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EBDA9A1-B8CF-4B4A-BD1B-E531F226AA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EBDA9A1-B8CF-4B4A-BD1B-E531F226AA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EBDA9A1-B8CF-4B4A-BD1B-E531F226AA10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C24B7C50-804B-48F7-90D0-8A38105868A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24B7C50-804B-48F7-90D0-8A38105868A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24B7C50-804B-48F7-90D0-8A38105868A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24B7C50-804B-48F7-90D0-8A38105868A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9056E8E-CEBA-460C-9536-534B4486B11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9056E8E-CEBA-460C-9536-534B4486B11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9056E8E-CEBA-460C-9536-534B4486B11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9056E8E-CEBA-460C-9536-534B4486B11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029468BA-C023-47E9-BB7E-1D180D39DF27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029468BA-C023-47E9-BB7E-1D180D39DF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029468BA-C023-47E9-BB7E-1D180D39DF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029468BA-C023-47E9-BB7E-1D180D39DF27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F343B6A-C04E-4CDA-AAAA-A37C69B2AF16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F343B6A-C04E-4CDA-AAAA-A37C69B2AF16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F343B6A-C04E-4CDA-AAAA-A37C69B2AF16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F343B6A-C04E-4CDA-AAAA-A37C69B2AF16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9056E8E-CEBA-460C-9536-534B4486B11F} = {79B44D7D-62D0-4A49-B3AB-53206D7137D0}
+	EndGlobalSection
+EndGlobal

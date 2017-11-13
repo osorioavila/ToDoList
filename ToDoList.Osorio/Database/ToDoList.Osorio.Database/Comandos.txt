@@ -1,0 +1,7 @@
+﻿dCaminho do executor de Migrations:
+PATH - Documents\Visual Studio 2017\Projects\TesteOsorio\packages\FluentMigrator.1.6.2\tools
+
+Migrate.exe /connection "data source=localhost;initial catalog=ToDoList;User ID=sa;Password=p@ssword;" /db SQLserver2008 /timeout 600 /target ..\..\..\Database\ToDoList.Database\bin\Debug\FluentMigrator.dll
+
+Para Rollback
+Migrate.exe /connection "data source=localhost;initial catalog=ToDoList;User ID=sa;Password=P@ssword!!;" /db SQLserver2008 /timeout 600 /task rollback --steps=1 /target ..\..\..\Database\TesteOsorio.Database\bin\Debug\FluentMigrator.dll

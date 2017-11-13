@@ -1,0 +1,32 @@
+﻿@model ToDoList.Web.Models.TaskModel
+<div>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h4 class="modal-title" id="modalDetailsLabel">Excluir Tarefa</h4>
+        <h6>Deseja realmente excluir esta tarefa?</h6>
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+    <div class="modal-footer">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Excluir" class="btn btn-default" />
+            </div>
+        }
+    </div>
+</div>  
