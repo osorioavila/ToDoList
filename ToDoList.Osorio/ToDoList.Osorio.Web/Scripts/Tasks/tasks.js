@@ -51,7 +51,6 @@ function UpdateTasks(column, tasksId) {
 var DetailPostBackURL = '/Tasks/Details';
 $(function () {
     $(".anchorDetail").click(function () {
-        debugger;
         var $buttonClicked = $(this);
         var id = $buttonClicked.attr('data-id');
         var options = { "backdrop": "static", keyboard: true };
@@ -62,7 +61,6 @@ $(function () {
             data: { "Id": id },
             datatype: "json",
             success: function (data) {
-                debugger;
                 $('#modalDetailsContent').html(data);
                 $('#modalDetails').modal(options);
                 $('#modalDetails').modal('show');
@@ -92,7 +90,6 @@ $(function () {
             data: { "Id": id },
             datatype: "json",
             success: function (data) {
-                debugger;
                 $('#modalDeleteContent').html(data);
                 $('#modalDelete').modal(options);
                 $('#modalDelete').modal('show');
@@ -122,7 +119,6 @@ $(function () {
             data: { "Id": id },
             datatype: "json",
             success: function (data) {
-                debugger;
                 $('#modalCreateContent').html(data);
                 $('#modalCreate').modal(options);
                 $('#modalCreate').modal('show');
@@ -152,7 +148,6 @@ $(function () {
             data: { "Id": id },
             datatype: "json",
             success: function (data) {
-                debugger;
                 $('#modalEditContent').html(data);
                 $('#modalEdit').modal(options);
                 $('#modalEdit').modal('show');
