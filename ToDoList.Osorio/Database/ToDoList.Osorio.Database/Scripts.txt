@@ -60,4 +60,13 @@ GO
 ALTER TABLE [dbo].[Tarefa] CHECK CONSTRAINT [FK_Tarefa_StatusTarefa]
 GO
 
+INSERT INTO [dbo].[StatusTarefa] ([datahora_criacao],[usuario_criacao],[datahora_alteracao],[usuario_alteracao],[descricao])
+     VALUES (getdate(),'osorio',NULL,NULL,'A fazer')
+INSERT INTO [dbo].[StatusTarefa] ([datahora_criacao],[usuario_criacao],[datahora_alteracao],[usuario_alteracao],[descricao])
+     VALUES (getdate(),'osorio',NULL,NULL,'Em Andamento')
+INSERT INTO [dbo].[StatusTarefa] ([datahora_criacao],[usuario_criacao],[datahora_alteracao],[usuario_alteracao],[descricao])
+     VALUES (getdate(),'osorio',NULL,NULL,'Concluido')
+INSERT INTO [dbo].[StatusTarefa] ([datahora_criacao],[usuario_criacao],[datahora_alteracao],[usuario_alteracao],[descricao])
+     VALUES (getdate(),'osorio',NULL,NULL,'Excluido')
 
+GO
