@@ -25,6 +25,12 @@ namespace ToDoList.Database.Migrations
                 .WithColumn("titulo").AsCustom("VARCHAR(15)").NotNullable()
                 .WithColumn("descricao").AsCustom("VARCHAR(max)").NotNullable()
                 .WithColumn("id_statustarefa").AsInt32().ForeignKey("StatusTarefa", "id_statustarefa");
+                
+            Execute.Sql("INSERT INTO[dbo].[StatusTarefa]([datahora_criacao],[usuario_criacao],[datahora_alteracao],[usuario_alteracao],[descricao]) VALUES(getdate(),'osorio', NULL, NULL,'A fazer')");
+            Execute.Sql("INSERT INTO[dbo].[StatusTarefa]([datahora_criacao],[usuario_criacao],[datahora_alteracao],[usuario_alteracao],[descricao]) VALUES(getdate(),'osorio', NULL, NULL,'Em Andamento')");
+            Execute.Sql("INSERT INTO[dbo].[StatusTarefa]([datahora_criacao],[usuario_criacao],[datahora_alteracao],[usuario_alteracao],[descricao]) VALUES(getdate(),'osorio', NULL, NULL,'Em Andamento')");
+            Execute.Sql("INSERT INTO[dbo].[StatusTarefa]([datahora_criacao],[usuario_criacao],[datahora_alteracao],[usuario_alteracao],[descricao]) VALUES(getdate(),'osorio', NULL, NULL,'Excluido')");
+
         }
 
         public override void Down()
